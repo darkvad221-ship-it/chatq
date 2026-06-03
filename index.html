@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatQ Assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Chat tools">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">Q</div>
+          <div>
+            <h1>ChatQ</h1>
+            <p>Local assistant</p>
+          </div>
+        </div>
+
+        <section class="panel">
+          <h2>Try asking</h2>
+          <div class="prompt-list">
+            <button class="quick-prompt" type="button">Summarize what this app can do</button>
+            <button class="quick-prompt" type="button">Help me plan my day</button>
+            <button class="quick-prompt" type="button">Write a polite follow-up email</button>
+            <button class="quick-prompt" type="button">Give me study tips</button>
+          </div>
+        </section>
+
+        <section class="panel compact">
+          <h2>Controls</h2>
+          <button id="exportChat" class="secondary-button" type="button">Export chat</button>
+          <button id="clearChat" class="secondary-button danger" type="button">Clear chat</button>
+        </section>
+      </aside>
+
+      <section class="chat-area" aria-label="Chat conversation">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">Ready</p>
+            <h2>Ask anything</h2>
+          </div>
+          <div class="status-pill">
+            <span aria-hidden="true"></span>
+            Offline bot
+          </div>
+        </header>
+
+        <div id="messages" class="messages" aria-live="polite"></div>
+
+        <form id="chatForm" class="composer" autocomplete="off">
+          <label class="sr-only" for="messageInput">Message</label>
+          <textarea
+            id="messageInput"
+            name="message"
+            rows="1"
+            placeholder="Message ChatQ..."
+            required
+          ></textarea>
+          <button id="sendButton" type="submit" aria-label="Send message">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
